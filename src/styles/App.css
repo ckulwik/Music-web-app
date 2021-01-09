@@ -1,0 +1,20 @@
+/* .outermost-container {
+  height: 100%;
+  background: red;
+  background-image: url(./imgs/ckulwikScaledDown.svg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;  
+  background-size: cover;
+  background-position: center;
+}
+
+.background-image{
+ width: 50px;
+}
+
+.background-image img{
+
+    max-height: 5%;
+    max-width: 95%; 
+  
+} */

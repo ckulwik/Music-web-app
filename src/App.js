@@ -1,13 +1,15 @@
-import './App.css';
+import './styles/App.css';
 import { Route, NavLink, HashRouter } from "react-router-dom"
 import Home from "./components/Home";
 import Stuff from "./components/Stuff";
 import Things from "./components/Things";
+import Background from "./components/Background";
 
-function App() {
+const App = () => {
   return (
     <HashRouter>
-      <div>
+      <Background />
+      <div className="content-container">
         <h1>Simple SPA</h1>
         <ul>
           <li><NavLink to="/">Home</NavLink></li>
@@ -20,6 +22,8 @@ function App() {
           <Route path="/things" component={Things} />
         </div>
       </div>
+      {/* <script src="animation.js"></script> */}
+      <script src="alert.js"></script>
     </HashRouter>
   );
 }
