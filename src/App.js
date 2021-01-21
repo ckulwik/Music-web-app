@@ -1,11 +1,19 @@
-import './styles/App.css';
 import { Route, NavLink, HashRouter } from "react-router-dom"
+import { useEffect } from "react";
+
+import './styles/App.css';
 import Home from "./components/Home";
-import Stuff from "./components/Stuff";
-import Things from "./components/Things";
+import Music from "./components/Music";
+import Bio from "./components/Bio";
 import Background from "./components/Background";
+import animateMainImage from "./scripts/animation";
 
 const App = () => {
+
+  useEffect(() => {
+    animateMainImage();
+  })
+
   return (
     <HashRouter>
       <Background />
@@ -13,17 +21,16 @@ const App = () => {
         <h1>Simple SPA</h1>
         <ul>
           <li><NavLink to="/">Home</NavLink></li>
-          <li><NavLink to="/stuff">Stuff</NavLink></li>
-          <li><NavLink to="/things">Things</NavLink></li>
+          <li><NavLink to="/Music">Music</NavLink></li>
+          <li><NavLink to="/Bio">Bio</NavLink></li>
         </ul>
         <div className="content">
           <Route exact path="/" component={Home} />
-          <Route path="/stuff" component={Stuff} />
-          <Route path="/things" component={Things} />
+          <Route path="/Music" component={Music} />
+          <Route path="/Bio" component={Bio} />
         </div>
+        {/* <script src="../animation.js"></script> */}
       </div>
-      {/* <script src="animation.js"></script> */}
-      <script src="alert.js"></script>
     </HashRouter>
   );
 }

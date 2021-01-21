@@ -1,19 +1,17 @@
 .container-to-center{
-    border: 2px blue solid;
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     position: absolute;
     width: 100%;
-
+    z-index: -100;
 }
 
 .img-container { 
     height: 55%;
     width: 40%;
     position: absolute;
-    border: pink solid 2px;
     overflow: hidden;
 }
 
