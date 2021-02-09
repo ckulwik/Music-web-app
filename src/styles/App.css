@@ -1,24 +1,27 @@
-/* .outermost-container {
-  height: 100%;
-  background: red;
-  background-image: url(./imgs/ckulwikScaledDown.svg);
-  background-repeat: no-repeat;
-  background-attachment: fixed;  
-  background-size: cover;
-  background-position: center;
+.content-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.background-image{
- width: 50px;
+.menu-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 30%;
 }
 
-.background-image img{
-
-    max-height: 5%;
-    max-width: 95%; 
-  
-} */
+.menu-item {
+  text-decoration: none;
+  padding-left: 10px;
+  padding-right: 10px;
+  cursor: pointer;
+}
 
 h1 {
   margin: 0;
+}
+
+.page {
+  height: 100vh
 }

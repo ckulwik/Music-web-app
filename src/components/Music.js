@@ -1,17 +1,17 @@
-import { useEffect } from "react";
+// import { useEffect } from "react";
 
 
 const Music = () => {
-    useEffect(() => {
-        const audioEl = document.getElementsByClassName("audio-player")[0];
-        audioEl.play();
-    })
+    // useEffect(() => {
+    //     const audioEl = document.getElementsByClassName("audio-player")[0];
+    //     audioEl.play();
+    // })
 
     return (
         <div>
             <h1>Welcome Music</h1>
             <audio controls className="audio-player">
-                <source src="../audio/neverGonna.wav" type="audio/wav" />
+                <source src="https://music-web-app.s3.us-east-2.amazonaws.com/musicFiles/neverGonna.wav" type="audio/wav" />
                 Your browser does not support the audio element.
             </audio>
         </div>

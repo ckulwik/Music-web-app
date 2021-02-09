@@ -1,5 +1,5 @@
 import { Route, NavLink, HashRouter } from "react-router-dom"
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 
 import './styles/App.css';
 import Home from "./components/Home";
@@ -14,24 +14,44 @@ const App = () => {
     animateMainImage();
   })
 
+  const homeRef = useRef(null);
+  const musicRef = useRef(null);
+  const bioRef = useRef(null);
+
+  const scrollTo = (ref) => {
+    ref.current.scrollIntoView({behavior: "smooth"});
+  }
+
   return (
-    <HashRouter>
+    <>
       <Background />
       <div className="content-container">
-        <h1>Simple SPA</h1>
-        <ul>
-          <li><NavLink to="/">Home</NavLink></li>
-          <li><NavLink to="/Music">Music</NavLink></li>
-          <li><NavLink to="/Bio">Bio</NavLink></li>
-        </ul>
-        <div className="content">
-          <Route exact path="/" component={Home} />
-          <Route path="/Music" component={Music} />
-          <Route path="/Bio" component={Bio} />
+        <h1>chris kulwik</h1>
+        <div className="menu-container">
+          <div className="menu-item" >
+            <h2 >Home</h2>
+          </div>
+          <div className="menu-item" onClick={() => scrollTo(musicRef)}>
+            <h2 >Music</h2>
+          </div>
+          <div className="menu-item" onClick={() => scrollTo(bioRef)}>
+            <h2 >Bio</h2>
+          </div>
+
+        </div>
+
+        <div className="page" ref={homeRef}>
+          <Home />
+        </div>
+        <div className="page" ref={musicRef}>
+          <Music />
+        </div>
+        <div className="page" ref={bioRef} onClick={() => scrollTo(bioRef)}>
+          <Bio />
         </div>
         {/* <script src="../animation.js"></script> */}
       </div>
-    </HashRouter>
+    </>
   );
 }
 
