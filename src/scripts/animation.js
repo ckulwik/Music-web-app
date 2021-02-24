@@ -16,7 +16,6 @@ const animateMainImage = () => {
     const imgHeight = document.querySelector(".img-container").offsetHeight;
 
     const vertAdjustment = 150;
-
     // clientX at 0 -> want to move img right 100
     // clientX at width/2, no move 
     // clientX at WinWidth -> move img left 100
