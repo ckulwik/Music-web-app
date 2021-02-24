@@ -1,4 +1,3 @@
-import { Route, NavLink, HashRouter } from "react-router-dom"
 import { useEffect, useRef } from "react";
 
 import './styles/App.css';
@@ -19,7 +18,7 @@ const App = () => {
   const bioRef = useRef(null);
 
   const scrollTo = (ref) => {
-    ref.current.scrollIntoView({behavior: "smooth"});
+    ref.current.scrollIntoView({ behavior: "smooth" });
   }
 
   return (
