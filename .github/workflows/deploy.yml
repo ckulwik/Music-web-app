@@ -36,4 +36,4 @@ jobs:
           aws-region: us-east-2
 
       - name: Upload to S3
-        run: aws s3 sync ./public/ s3://music-web-app.s3-website.us-east-2.amazonaws.com --delete --acl public-read
+        run: aws s3 sync ./build/ s3://music-web-app --delete --acl public-read
