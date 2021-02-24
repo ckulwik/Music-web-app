@@ -45,10 +45,9 @@ const App = () => {
         <div className="page" ref={musicRef}>
           <Music />
         </div>
-        <div className="page" ref={bioRef} onClick={() => scrollTo(bioRef)}>
+        <div className="page" ref={bioRef}>
           <Bio />
         </div>
-        {/* <script src="../animation.js"></script> */}
       </div>
     </>
   );

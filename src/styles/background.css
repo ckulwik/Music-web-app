@@ -9,8 +9,8 @@
 }
 
 .img-container { 
-    height: 60%;
-    width: 60%;
+    height: fit-content;
+    width: fit-content;
     position: absolute;
     overflow: hidden;
 }
