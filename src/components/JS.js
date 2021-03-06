@@ -1,11 +1,11 @@
 import "../styles/section.css"
 
-function Home() {
+const JS = () => {
     return (
         <div className="page-container">
-            <h1 className="page-title">Welcome to the Home page</h1>
+            <h1 className="page-title">Welcome JS</h1>
         </div>
     )
 }
 
-export default Home;
+export default JS;

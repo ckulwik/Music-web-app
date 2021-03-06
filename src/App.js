@@ -3,8 +3,10 @@ import { useEffect, useRef } from "react";
 import './styles/App.css';
 import Home from "./components/Home";
 import Music from "./components/Music";
-import Bio from "./components/Bio";
+import JS from "./components/JS";
 import Background from "./components/Background";
+import VirtualDom from "./components/VirtualDom/VirtualDom";
+
 import animateMainImage from "./scripts/animation";
 
 const App = () => {
@@ -15,7 +17,8 @@ const App = () => {
 
   const homeRef = useRef(null);
   const musicRef = useRef(null);
-  const bioRef = useRef(null);
+  const JSRef = useRef(null);
+  const VirtualDomRef = useRef(null);
 
   const scrollTo = (ref) => {
     ref.current.scrollIntoView({ behavior: "smooth" });
@@ -30,11 +33,14 @@ const App = () => {
           <div className="menu-item" >
             <h2 >Home</h2>
           </div>
+          <div className="menu-item" onClick={() => scrollTo(JSRef)}>
+            <h2 >JS</h2>
+          </div>
+          <div className="menu-item" onClick={() => scrollTo(VirtualDomRef)}>
+            <h2 >VirtualDom</h2>
+          </div>
           <div className="menu-item" onClick={() => scrollTo(musicRef)}>
             <h2 >Music</h2>
-          </div>
-          <div className="menu-item" onClick={() => scrollTo(bioRef)}>
-            <h2 >Bio</h2>
           </div>
 
         </div>
@@ -42,11 +48,14 @@ const App = () => {
         <div className="page" ref={homeRef}>
           <Home />
         </div>
+        <div className="page" ref={JSRef}>
+          <JS />
+        </div>
+        <div className="page" ref={VirtualDomRef}>
+          <VirtualDom />
+        </div>
         <div className="page" ref={musicRef}>
           <Music />
-        </div>
-        <div className="page" ref={bioRef}>
-          <Bio />
         </div>
       </div>
     </>

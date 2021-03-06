@@ -1,0 +1,79 @@
+.page-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input-container {
+    display: flex;
+}
+
+.numRecolors-input{
+    margin: 10px;
+}
+
+.demo-container {
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+}
+
+.header-container {
+    display: flex;
+    justify-content: center;
+}
+
+.list-contents{
+    display: flex;
+}
+
+.left-side{
+    width: 50%;
+    padding: 10px;
+    border: 2px solid lightgray;
+    border-radius: 3px;
+    margin-right: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.right-side{
+    width: 50%;
+    padding: 10px;
+    border: 2px solid lightgray;
+    border-radius: 3px;
+    margin-right: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.list {
+    margin-right: 30px;
+    padding: 20px;
+}
+
+.small-box {
+    height: 50px;
+    width: 80px;
+    border: 2px solid black;
+    border-radius: 3px;
+    margin-bottom: 10px;
+}
+
+.code{
+        background: #f4f4f4;
+        border: 1px solid #ddd;
+        border-left: 3px solid #f36d33;
+        color: #666;
+        page-break-inside: avoid;
+        font-family: monospace;
+        font-size: 13px;
+        line-height: 1.6;
+        margin-bottom: 1.6em;
+        max-width: 100%;
+        overflow: auto;
+        padding: 1em 1.5em;
+        display: block;
+        word-wrap: break-word;
+}
