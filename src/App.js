@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react";
 
 import './styles/App.css';
 import Home from "./components/Home";
-import Music from "./components/Music";
+// import Music from "./components/Music";
 import JS from "./components/JS";
 import Background from "./components/Background";
 import VirtualDom from "./components/VirtualDom/VirtualDom";
@@ -16,7 +16,7 @@ const App = () => {
   })
 
   const homeRef = useRef(null);
-  const musicRef = useRef(null);
+  // const musicRef = useRef(null);
   const JSRef = useRef(null);
   const VirtualDomRef = useRef(null);
 
@@ -39,9 +39,9 @@ const App = () => {
           <div className="menu-item" onClick={() => scrollTo(VirtualDomRef)}>
             <h2 >VirtualDom</h2>
           </div>
-          <div className="menu-item" onClick={() => scrollTo(musicRef)}>
+          {/* <div className="menu-item" onClick={() => scrollTo(musicRef)}>
             <h2 >Music</h2>
-          </div>
+          </div> */}
 
         </div>
 
@@ -54,9 +54,9 @@ const App = () => {
         <div className="page" ref={VirtualDomRef}>
           <VirtualDom />
         </div>
-        <div className="page" ref={musicRef}>
+        {/* <div className="page" ref={musicRef}>
           <Music />
-        </div>
+        </div> */}
       </div>
     </>
   );

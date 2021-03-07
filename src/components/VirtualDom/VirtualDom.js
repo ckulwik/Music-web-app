@@ -87,21 +87,11 @@ const VirtualDom = () => {
                 <button
                     onClick={() => side === "left" ? leftHandleClick() : rightHandleClick()}
                 >
-                    randomize colors
+                    randomize colors {numRecolors} times
             </button>
             </>
         )
     }
-
-    const getLeftSideRandCode = () => {
-        return `for (let i = 0; i < numRecolors; i++) {\n
-            const colors = getRandomColors(LIST_LEN); +
-            for (var j = 0; j < LIST_LEN; j++) {
-            leftColorStateSetters[j](colors[j]);
-            }`
-    }
-
-    const fwreg3 = "hey\nhey"
 
     return (
         <div className="page-container">
@@ -121,13 +111,20 @@ const VirtualDom = () => {
                         </div>
                         <div>
                             <p>
-                                This side is utilizing React's useState hook to update the colors of the items.
+                                In this example, the color of the items is being stored as a state variable. The color state variable is updated, and then the new style is applied
+                                via in-line styling. The VD allows changes to be applied on it first, before actually changing the DOM.
+                                B/c the VD is not rendered, changes to it are cheap. Along with batching changes, the VD approach is much faster.
+                                
                             </p>
                             <div>
-                                <p>timer: {leftEnd - leftStart} ms </p>
-                                <p>
-                                    {fwreg3}
+                                <p className="code">
+                                    const [leftColor1, setLeftColor1] = useState(startingColors[0]);
                                 </p>
+                                <p>...</p>
+                                <p className="code">
+                                    setLeftColor1(newColor)
+                                </p>
+                                <p>timer: {leftEnd - leftStart} ms </p>
                             </div>
                         </div>
                     </div>
@@ -142,9 +139,14 @@ const VirtualDom = () => {
                         </div>
                         <div>
                             <p>
-                                This side is using direct DOM manipualtion to update the colors of the items.
+                                This side is using direct DOM manipulation to change the styling
+                                of the items. Updating the DOM after manipulation is inneficient, 
+                                and has a slower performance than React's Virtual DOM.
                             </p>
                             <div>
+                                <p className="code">
+                                    document.querySelector(...).style.background = newColor;
+                                </p>
                                 <p>timer: {rightEnd - rightStart} ms </p>
                             </div>
 
