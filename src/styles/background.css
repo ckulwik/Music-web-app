@@ -9,6 +9,7 @@
 }
 
 .img-container { 
+    max-width: 40%;
     height: fit-content;
     width: fit-content;
     position: absolute;

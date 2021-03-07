@@ -1,0 +1,8 @@
+.page-container {
+    display: flex;
+    justify-content: center;
+}
+
+.page-title {
+    width: fit-content;
+}

@@ -9,10 +9,10 @@ const animateMainImage = () => {
     const halfWinWidth = windowWidth / 2;
     const halfWinHeight = windowHeight / 2;
 
-    const maxWiggleHorz = 100;
-    const maxWiggleVert = 100;
+    const maxWiggleHorz = 50;
+    const maxWiggleVert = 50;
 
-    const vertAdjustment = 0;
+    const vertAdjustment = 100;
 
     root.addEventListener("mousemove", (e) => {
         const horizPercentAdj = (halfWinWidth - e.clientX) / halfWinWidth;
