@@ -56,7 +56,7 @@ const App = () => {
     <>
       {/* <Background /> */}
       <div className="content-container">
-        <h1> Hey Craig </h1>
+        <h1>Chris Kulwik</h1>
         <div className="menu-container">
           {/* <div className="menu-item" onClick={() => scrollTo(AsyncRef)}>
             <h2 >Async</h2>
