@@ -1,17 +1,17 @@
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 
 import './styles/App.css';
-import Home from "./components/Home";
-import Async from "./components/Async";
-import Generators from "./components/Generators";
-import Callbacks from "./components/Callbacks";
-import ArrayFuncs from "./components/ArrayFuncs";
+// import Home from "./components/Home";
+// import Async from "./components/Async";
+// import Generators from "./components/Generators";
+// import Callbacks from "./components/Callbacks";
+// import ArrayFuncs from "./components/ArrayFuncs";
 import LetVsVar from "./components/LetVsVar";
-import Hooks from "./components/Hooks";
+// import Hooks from "./components/Hooks";
 
 import VirtualDom from "./components/VirtualDom/VirtualDom";
 
-import Background from "./components/Background";
+// import Background from "./components/Background";
 
 // Async async
 // generators
@@ -26,11 +26,9 @@ import Background from "./components/Background";
 // import animateMainImage from "./scripts/animation";
 
 // import Music from "./components/Music";
-import JS from "./components/JS";
-import Background from "./components/Background";
-import VirtualDom from "./components/VirtualDom/VirtualDom";
+// import JS from "./components/JS";
+// import Background from "./components/Background";
 
-import animateMainImage from "./scripts/animation";
 
 
 const App = () => {
@@ -41,12 +39,12 @@ const App = () => {
 
 
   // const homeRef = useRef(null);
-  const AsyncRef = useRef(null);
-  const GeneratorsRef = useRef(null);
-  const CallsbacksRef = useRef(null);
-  const ArrayFuncsRef = useRef(null);
+  // const AsyncRef = useRef(null);
+  // const GeneratorsRef = useRef(null);
+  // const CallsbacksRef = useRef(null);
+  // const ArrayFuncsRef = useRef(null);
   const LetVsVarRef = useRef(null);
-  const HooksRef = useRef(null);
+  // const HooksRef = useRef(null);
 
   const VirtualDomRef = useRef(null);
 
