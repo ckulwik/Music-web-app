@@ -2,7 +2,6 @@ import { useEffect, useRef } from "react";
 
 import './styles/App.css';
 import Home from "./components/Home";
-
 import Async from "./components/Async";
 import Generators from "./components/Generators";
 import Callbacks from "./components/Callbacks";
@@ -26,11 +25,20 @@ import Background from "./components/Background";
 
 // import animateMainImage from "./scripts/animation";
 
+// import Music from "./components/Music";
+import JS from "./components/JS";
+import Background from "./components/Background";
+import VirtualDom from "./components/VirtualDom/VirtualDom";
+
+import animateMainImage from "./scripts/animation";
+
+
 const App = () => {
 
   // useEffect(() => {
   //   animateMainImage();
   // })
+
 
   // const homeRef = useRef(null);
   const AsyncRef = useRef(null);
@@ -39,6 +47,7 @@ const App = () => {
   const ArrayFuncsRef = useRef(null);
   const LetVsVarRef = useRef(null);
   const HooksRef = useRef(null);
+
   const VirtualDomRef = useRef(null);
 
   const scrollTo = (ref) => {
@@ -72,6 +81,7 @@ const App = () => {
           <div className="menu-item" onClick={() => scrollTo(VirtualDomRef)}>
             <h2 >VirtualDom</h2>
           </div>
+
         </div>
 
         <div className="page" />

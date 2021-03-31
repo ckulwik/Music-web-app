@@ -102,6 +102,7 @@ const VirtualDom = () => {
                 <input className="numRecolors-input" value={numRecolors} onChange={event => setNumRecolors(event.target.value)}></input>
             </div>
             <div className="demo-container"> 
+
                 <div className="left-side">
                     <div className="header-container">
                         <h2>Using React's Virtual Dom</h2>
