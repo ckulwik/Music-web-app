@@ -3,6 +3,7 @@ import { getRandomColors } from "../../scripts/domScripts";
 
 import "../../styles/section.css"
 import '../../styles/VirtualDom.css';
+import "../../styles/TwoCols.css"
 
 
 const VirtualDom = () => {
@@ -100,7 +101,8 @@ const VirtualDom = () => {
                 <p>select the number of random recolors: </p>
                 <input className="numRecolors-input" value={numRecolors} onChange={event => setNumRecolors(event.target.value)}></input>
             </div>
-            <div className="demo-container">
+            <div className="demo-container"> 
+
                 <div className="left-side">
                     <div className="header-container">
                         <h2>Using React's Virtual Dom</h2>
