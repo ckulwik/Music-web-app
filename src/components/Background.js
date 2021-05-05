@@ -1,19 +1,80 @@
 import "../styles/background.css";
+import {useEffect} from "react"
 
 const Background = () => {
+
+    // --scroll is supposed to be percent of page scrolled
+
+    window.addEventListener('scroll', () => {
+        // document.body.style.setProperty('--scroll',window.pageYOffset / (document.body.offsetHeight - window.innerHeight));
+        document.body.style.setProperty('--scroll', (document.documentElement.scrollTop) );
+      }, false);
+
+    useEffect(() => {
+        const handler = () => {
+          // Check and update component here.
+        //   console.log(document.documentElement.scrollTop)
+        console.log((document.documentElement.scrollTop))
+
+        // document.body.offsetHeight is always 610
+
+        };
+    
+        window.addEventListener("scroll", handler);
+        return () => window.removeEventListener("scroll", handler);
+      }, []
+    );
+
     return (
+        
         <div className="container-to-center">
             <div className="img-container">
-                <svg
-                    className="ckulwik-image"
-                    width="576pt"
-                    height="432pt"
-                    viewBox="0 0 1152 864">
-                    <ellipse id="shape0" transform="matrix(-1.71537504206708 0 0 1.69580665331687 982.169577446412 156.645073041425)" rx="108" ry="108" cx="108" cy="108" fill="none" stroke="#000000" stroke-width="3.6216" stroke-linecap="square" stroke-linejoin="bevel" /><path id="shape1" transform="matrix(-1.71537504206708 0 0 1.69580665331687 1066.95533564333 319.063195840943)" fill="none" stroke="#000000" stroke-width="3.6216" stroke-linecap="square" stroke-linejoin="bevel" d="M26.4281 5.03392C34.8179 169.475 64.1824 273.929 114.522 318.395L13.8433 268.056L0 0Z" /><ellipse id="shape2" transform="matrix(1.71537504206708 0 0 1.69580665331687 155.358807170078 156.645073041425)" rx="108" ry="108" cx="108" cy="108" fill="none" stroke="#000000" stroke-width="3.6216" stroke-linecap="square" stroke-linejoin="bevel" /><path id="shape3" transform="matrix(1.71537504206708 0 0 1.69580665331687 70.5730489731543 319.063195840943)" fill="none" stroke="#000000" stroke-width="3.6216" stroke-linecap="square" stroke-linejoin="bevel" d="M26.4281 5.03392C34.8179 169.475 64.1824 273.929 114.522 318.395L13.8433 268.056L0 0Z" /><path id="shape4" transform="matrix(1.71537504206708 0 0 1.69580665331687 518.977397424583 272.885555022591)" fill="none" stroke="#000000" stroke-width="3.6216" stroke-linecap="square" stroke-linejoin="bevel" d="M0 7.05631C19.8144 -2.2681 39.2124 -2.35135 58.1943 6.80654" /><path id="shape5" transform="matrix(1.71537504206708 0 0 1.69580665331687 409.638890022471 3.09031534107467)" fill="none" stroke="#000000" stroke-width="3.6216" stroke-linecap="square" stroke-linejoin="bevel" d="M0 60.136C27.6817 26.7271 73.2609 6.68178 136.738 0" /><path id="shape0" transform="matrix(1.7153749990306 0 0 1.69580661077133 536.983489374443 14.2436160961219)" fill="none" stroke="#000000" stroke-width="3.6216" stroke-linecap="square" stroke-linejoin="bevel" d="M0 60.136C27.6817 26.7271 73.2609 6.68178 136.738 0" /><path id="shape01" transform="matrix(1.7153749990306 0 0 1.69580661077133 672.904984733523 25.3969170839843)" fill="none" stroke="#000000" stroke-width="3.6216" stroke-linecap="square" stroke-linejoin="bevel" d="M0 60.136C27.6817 26.7271 73.2609 6.68178 136.738 0" />
+            
+                <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+                    width="300.000000pt" height="240.000000pt" viewBox="0 0 300.000000 240.000000"
+                    preserveAspectRatio="xMidYMid meet">
+                
+                    <g transform="translate(0.000000,240.000000) scale(0.100000,-0.100000)"
+                    fill="#000000" stroke="none">
+                        <path d="M1240 1609 c-282 -29 -680 -112 -680 -143 0 -7 7 -35 15 -62 8 -27
+                    15 -54 15 -59 0 -7 -40 -11 -107 -11 -60 0 -133 -6 -163 -13 -61 -15 -160 -64
+                    -185 -91 -16 -17 -15 -18 23 -13 22 3 64 0 94 -7 61 -15 213 -89 183 -90 -38
+                    -1 -124 -60 -170 -116 -25 -31 -64 -86 -86 -123 -22 -36 -47 -76 -56 -89 -11
+                    -16 13 -5 78 37 107 70 213 114 314 132 68 11 316 7 372 -7 23 -6 23 -5 17 49
+                    -12 101 -12 101 128 120 231 32 420 40 633 28 185 -11 408 -36 428 -48 5 -3 7
+                    -39 5 -79 l-5 -74 41 7 c23 4 115 7 206 8 147 0 173 -3 234 -23 89 -30 175
+                    -73 254 -128 34 -24 62 -41 62 -38 0 3 -8 17 -19 32 -10 15 -44 66 -75 114
+                    -65 100 -138 170 -199 191 l-42 14 61 31 c81 41 166 65 220 60 24 -2 44 -1 44
+                    2 0 3 -22 20 -49 38 -79 54 -157 74 -298 76 -68 0 -123 1 -123 1 0 0 9 31 20
+                    69 11 38 18 71 17 73 -6 5 -255 62 -386 87 -73 15 -190 33 -260 41 -135 16
+                    -421 18 -561 4z m404 -40 c198 -14 468 -54 621 -91 72 -17 131 -31 132 -32 2
+                    -1 -4 -36 -13 -77 -17 -78 -14 -201 5 -252 6 -16 7 -27 1 -27 -8 0 -196 34
+                    -510 93 -99 19 -150 22 -370 21 -277 0 -423 -17 -750 -83 -80 -16 -146 -28
+                    -148 -26 -1 1 2 22 7 46 15 64 13 186 -3 249 -8 30 -14 55 -13 56 13 7 368 79
+                    468 95 253 38 366 44 573 28z m-1048 -272 c2 -2 -4 -52 -12 -111 -8 -60 -12
+                    -112 -7 -116 14 -13 156 -62 218 -75 87 -19 17 -19 -100 0 -116 19 -198 19
+                    -266 -1 -59 -17 -143 -62 -189 -101 -45 -38 -36 -17 23 52 95 111 157 154 235
+                    164 l44 6 -81 53 c-79 53 -137 80 -176 82 -17 1 -16 3 7 15 58 32 131 45 217
+                    40 47 -3 86 -7 87 -8z m2084 -20 c36 -14 56 -26 45 -27 -45 -2 -124 -38 -188
+                    -85 l-67 -50 45 -7 c63 -9 134 -58 202 -137 89 -103 91 -107 36 -68 -28 21
+                    -82 52 -120 69 -86 39 -185 47 -325 24 -122 -20 -191 -21 -103 -1 33 7 96 27
+                    140 43 l80 30 -1 43 c0 24 -4 76 -9 116 l-8 72 34 4 c71 10 174 -1 239 -26z
+                    m-2427 -27 c-3 -11 -9 -20 -13 -20 -4 0 -10 9 -13 20 -4 15 0 20 13 20 13 0
+                    17 -5 13 -20z m2534 3 c2 -6 -7 -13 -21 -15 -22 -4 -24 -3 -15 14 11 20 30 20
+                    36 1z m-1966 -147 c-17 -20 -67 -30 -88 -17 -15 9 -12 11 17 11 19 1 44 5 55
+                    10 28 12 29 12 16 -4z m55 -12 c-3 -9 -6 -36 -6 -61 0 -35 -3 -43 -12 -36 -7
+                    6 -44 20 -83 32 -102 31 -112 41 -40 41 42 0 69 6 90 19 38 24 59 26 51 5z
+                    m1371 -6 c-11 -5 -24 -5 -37 2 -28 15 -25 17 16 12 29 -4 33 -7 21 -14z m-67
+                    -3 c14 -8 38 -14 53 -15 48 0 30 -32 -28 -50 -28 -8 -55 -18 -62 -23 -8 -5
+                    -12 9 -15 48 -3 61 5 67 52 40z m150 -17 c0 -7 -33 -28 -44 -28 -3 0 -6 9 -6
+                    20 0 15 6 19 25 18 14 -1 25 -6 25 -10z"/>
+                    </g>
                 </svg>
             </div>
         </div>
+        
+        
     )
 }
 
-export default Background;
+export default Background; 

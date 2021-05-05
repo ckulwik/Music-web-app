@@ -1,12 +1,12 @@
 import "../styles/section.css"
 
 
-const Async = () => {
+const About = () => {
     return (
         <div className="page-container">
-            <h1 className="page-title">Welcome Async</h1>
+            <h1 className="page-title">Welcome About</h1>
         </div>
     )
 }
 
-export default Async;
+export default About;
