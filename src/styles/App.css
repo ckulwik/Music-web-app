@@ -24,3 +24,31 @@ h1 {
   height: 100vh;
   width: 100%;
 }
+
+svg {
+  position: fixed; /* make sure it stays put so we can see it! */
+
+  animation: rotate 1s linear infinite;
+  animation-play-state: paused;
+  animation-delay: calc(var(--scroll) * -1s);
+  padding-top: calc(var(--scroll));
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+body {
+  /* feel free to change height */
+  height: 5000px;
+  background: linear-gradient(to bottom, #01edb3, #7b2c4e);
+}
+
+#star-svg {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 150px;
+  height: 150px;
+  margin: -75px 0 0 -75px;
+}
