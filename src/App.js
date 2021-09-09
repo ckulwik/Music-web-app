@@ -1,59 +1,37 @@
-import { useRef, useState } from "react";
+import { useRef } from "react";
 
-import './styles/App.css';
-import Background from "./components/Background";
-// import animateMainImage from "./scripts/animation";
-
+import "./styles/App.css";
 import Music from "./components/Music";
 import About from "./components/About";
+import HeaderItem from "./components/Header/HeaderItem";
 
 const App = () => {
-
-  // useEffect(() => {
-  //   animateMainImage();
-  // })
-
- 
-  const [isShrunk, setShrunk] = useState(false);
-
   const MusicRef = useRef(null);
-
   const AboutRef = useRef(null);
-
-  const scrollTo = (ref) => {
-    ref.current.scrollIntoView({ behavior: "smooth" });
-  }
+  const LinksRef = useRef(null);
 
   return (
     <>
-   {!isShrunk ?
-       <Background />
-    
-    : 
+      <header>
+        <HeaderItem title="Music" ref={MusicRef} order={1} />
+        <HeaderItem title="About" ref={AboutRef} order={2} />
+        <HeaderItem title="Links" ref={LinksRef} order={3} />
+      </header>
 
-      <div className="content-container">
-        
-        <h1>Chris Kulwik</h1>
-        <div className="menu-container">
-        <div className="menu-item" onClick={() => scrollTo(MusicRef)}>
-            <h2 >Music</h2>
-          </div>
-          <div className="menu-item" onClick={() => scrollTo(AboutRef)}>
-            <h2 >About</h2>
-          </div>  
-        </div>
-      
-        <div className="page" ref={MusicRef}>
-          <Music />
-        </div>
-        <div className="page" ref={AboutRef}>
-          <About />
-        </div>
-
+      <div className="page">
+        <h1>Dope af logo</h1>
       </div>
-      }
+      <div className="page" ref={MusicRef}>
+        <Music />
+      </div>
+      <div className="page" ref={AboutRef}>
+        <About />
+      </div>
+      <div className="page" ref={LinksRef}>
+        <h1>Links</h1>
+      </div>
     </>
   );
-}
+};
 
 export default App;

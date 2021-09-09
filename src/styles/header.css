@@ -1,0 +1,28 @@
+.header {
+  width: calc(100% - 40);
+  border-width: 5px;
+  margin-top: -20px;
+  color: white;
+}
+
+.header:hover {
+  cursor: pointer;
+}
+
+.header-1 {
+  border-top: 40px solid #f68b09;
+  margin-top: 40px;
+}
+
+.header-2 {
+  border-top: 40px solid #e73410;
+}
+
+.header-3 {
+  border-top: 40px solid #a90b1b;
+}
+
+.menu-title {
+  margin-top: -32px;
+  margin-left: 70px;
+}
