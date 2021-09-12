@@ -1,0 +1,29 @@
+@import './colors.css';
+
+.card-container {
+  display: flex;
+  margin-top: 50px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  width:80%;
+  max-width: 900px;
+  border: 12px solid var(--red);
+  border-radius: 8px;
+  box-shadow: -12px 12px 0 0 var(--orange), -24px 24px 0 0 var(--yellow);
+}
+
+.title-container {
+  max-width: 300px;
+  padding: 15px;
+  color: var(--text);
+}
+
+  
+.card-img {
+  max-width: 200px;
+}
+
+.audio-player {
+  min-width: 200px;
+}

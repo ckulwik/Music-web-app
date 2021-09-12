@@ -3,7 +3,8 @@ import { useRef } from "react";
 import "./styles/App.css";
 import Music from "./components/Music";
 import About from "./components/About";
-import HeaderItem from "./components/Header/HeaderItem";
+import Links from "./components/Links";
+import HeaderItem from "./components/HeaderItem";
 
 const App = () => {
   const MusicRef = useRef(null);
@@ -28,7 +29,7 @@ const App = () => {
         <About />
       </div>
       <div className="page" ref={LinksRef}>
-        <h1>Links</h1>
+        <Links />
       </div>
     </>
   );

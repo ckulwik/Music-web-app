@@ -12,11 +12,17 @@
     "react-scripts": "4.0.1",
     "web-vitals": "^0.2.4"
   },
+  "devDependencies": {
+    "sass-loader": "^10",
+    "webpack": "4.44.2",
+    "webpack-cli": "^4.8.0"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "wp-start": "webpack && open index.html"
   },
   "eslintConfig": {
     "extends": [

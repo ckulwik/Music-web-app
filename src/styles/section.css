@@ -1,8 +1,13 @@
 .page-container {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .page-title {
-    width: fit-content;
+  width: fit-content;
+}
+
+.music-page-container {
+  flex-direction: column;
+  align-items: center;
 }
