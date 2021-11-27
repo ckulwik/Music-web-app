@@ -10,7 +10,7 @@ const Links = () => {
             allowtransparency="true"
             scrolling="no"
             frameBorder="no"
-            src="https://w.soundcloud.com/icon/?url=http%3A%2F%2Fsoundcloud.com%2Fchris-kulwik&color=white_transparent&size=40"
+            src="https://w.soundcloud.com/icon/?url=http%3A%2F%2Fsoundcloud.com%2Fchris-kulwik&color=orange_white&size=40"
             style={{ width: 40 + "px", height: 40 + "px" }}
           ></iframe>
         </div>
