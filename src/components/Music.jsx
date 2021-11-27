@@ -1,5 +1,5 @@
 import "../styles/section.css";
-import SongCard from "../components/SongCard";
+import SongCard from "./SongCard";
 
 const Music = () => {
   // useEffect(() => {
