@@ -19,8 +19,11 @@ const App = () => {
         <HeaderItem title="Links" ref={LinksRef} order={3} />
       </header>
 
-      <div className="page">
-        <h1>Dope af logo</h1>
+      <div className="image-container">
+        <img
+          className="main-img"
+          src="https://music-web-app-songs.s3.us-east-2.amazonaws.com/ChrisKulwikLogov2.png"
+        ></img>
       </div>
       <div className="page" ref={MusicRef}>
         <Music />

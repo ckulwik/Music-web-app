@@ -9,11 +9,10 @@ const Music = () => {
 
   return (
     <div className="page-container music-page-container">
-      <h1 className="page-title">Music</h1>
       <SongCard
-        imgSrc="https://music-web-app-songs.s3.us-east-2.amazonaws.com/spongebobbootssq.jpg"
-        songTitle="Are You Gonna be my Barb? (Big Black Boots)"
-        audioSrc="https://music-web-app-songs.s3.us-east-2.amazonaws.com/Are+you+gonna+be+my+barb+(big+black+boots).wav"
+        imgSrc="https://music-web-app-songs.s3.us-east-2.amazonaws.com/ypsibridgecover.svg"
+        songTitle="Ypsi Bridge"
+        audioSrc=""
       />
     </div>
   );

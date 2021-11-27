@@ -2,8 +2,25 @@ import "../styles/section.css";
 
 const Links = () => {
   return (
-    <div className="page-container">
-      <h1 className="page-title">Links</h1>
+    <div className="links-page-container">
+      <div className="links-container">
+        <div className="sound-cloud-container">
+          <iframe
+            className="soundCloud"
+            allowtransparency="true"
+            scrolling="no"
+            frameBorder="no"
+            src="https://w.soundcloud.com/icon/?url=http%3A%2F%2Fsoundcloud.com%2Fchris-kulwik&color=white_transparent&size=40"
+            style={{ width: 40 + "px", height: 40 + "px" }}
+          ></iframe>
+        </div>
+        <a href="https://github.com/ckulwik">
+          <img
+            className="mark"
+            src="https://music-web-app-songs.s3.us-east-2.amazonaws.com/GitHub-Mark-64px.png"
+          ></img>
+        </a>
+      </div>
     </div>
   );
 };
