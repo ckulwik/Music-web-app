@@ -17,7 +17,7 @@ const SongCard = ({ songTitle, imgSrc, audioSrc }) => {
             </div>
             <audio
               controls
-              controlsList="nodownload"
+              controlsList="nodownload noplaybackrate"
               className="audio-player desktop"
             >
               <source src={audioSrc} type="audio/wav" />

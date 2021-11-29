@@ -14,7 +14,7 @@ const Links = () => {
             style={{ width: 40 + "px", height: 40 + "px" }}
           ></iframe>
         </div>
-        <a href="https://github.com/ckulwik">
+        <a href="https://github.com/ckulwik/music-web-app">
           <img
             className="mark"
             src="https://music-web-app-songs.s3.us-east-2.amazonaws.com/GitHub-Mark-64px.png"

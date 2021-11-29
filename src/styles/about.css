@@ -1,3 +1,10 @@
 .about-text {
   color: var(--text);
+  margin-right: 10%;
+  margin-left: 10%;
+  max-width: 400px;
+}
+
+.about-page {
+  flex-direction: column;
 }

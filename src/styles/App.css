@@ -34,6 +34,7 @@ h4 {
 
 .page.links {
   min-height: 150px;
+  margin-bottom: 100px;
 }
 
 .image-container {
@@ -43,10 +44,12 @@ h4 {
   margin-top: 100px;
   margin-bottom: 100px;
   max-height: 400px;
+  min-height: 30vh;
   width: 100%;
 }
 
 .main-img {
   width: 50%;
   max-width: 600px;
+  min-width: 250px;
 }
