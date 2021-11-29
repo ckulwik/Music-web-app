@@ -10,7 +10,11 @@ const SongCard = ({ songTitle, imgSrc, audioSrc }) => {
     <>
       {isDesktop ? (
         <div className="card-container desktop">
-          <img className="card-img desktop" src={imgSrc} />
+          <img
+            className="card-img desktop"
+            alt="cover image for chris kulwik's 'Ypsi Bridge' song"
+            src={imgSrc}
+          />
           <div className="title-and-player">
             <div className="title-container desktop">
               <h3>{songTitle}</h3>

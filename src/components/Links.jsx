@@ -6,6 +6,7 @@ const Links = () => {
       <div className="links-container">
         <div className="sound-cloud-container">
           <iframe
+            title="soundCloud logo, link to chris kulwik's soundcloud"
             className="soundCloud"
             allowtransparency="true"
             scrolling="no"
@@ -17,6 +18,7 @@ const Links = () => {
         <a href="https://github.com/ckulwik/music-web-app">
           <img
             className="mark"
+            alt="github logo, link to chris kulwik's github"
             src="https://music-web-app-songs.s3.us-east-2.amazonaws.com/GitHub-Mark-64px.png"
           ></img>
         </a>
