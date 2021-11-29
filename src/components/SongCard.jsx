@@ -12,7 +12,7 @@ const SongCard = ({ songTitle, imgSrc, audioSrc }) => {
         <div className="card-container desktop">
           <img
             className="card-img desktop"
-            alt="cover image for chris kulwik's 'Ypsi Bridge' song"
+            alt="cover for chris kulwik's 'Ypsi Bridge' song"
             src={imgSrc}
           />
           <div className="title-and-player">
@@ -32,7 +32,11 @@ const SongCard = ({ songTitle, imgSrc, audioSrc }) => {
       ) : (
         <div className="card-container">
           <div className="image-and-title">
-            <img className="card-img" src={imgSrc} />
+            <img
+              className="card-img"
+              alt="cover for chris kulwik's 'Ypsi Bridge' song"
+              src={imgSrc}
+            />
             <div className="title-container">
               <h3>{songTitle}</h3>
             </div>
