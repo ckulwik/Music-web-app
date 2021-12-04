@@ -48,5 +48,3 @@ const SongCard = ({ songTitle, coverImgSrc, coverImgAlt, audioSrc }) => {
 };
 
 export default SongCard;
-{
-}
