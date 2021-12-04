@@ -23,7 +23,7 @@ const App = () => {
         <img
           className="main-img"
           alt="chris kulwik music main logo, in colorful retro font"
-          src="https://music-web-app-songs.s3.us-east-2.amazonaws.com/ChrisKulwikLogov2.png"
+          src="https://music-web-app-songs.s3.us-east-2.amazonaws.com/ChrisKulwikLogoSmaller.png"
         ></img>
       </div>
       <div className="page" ref={MusicRef}>
