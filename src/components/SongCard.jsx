@@ -2,7 +2,7 @@ import React from "react";
 import { useMediaQuery } from "react-responsive";
 import "../styles/songCard.css";
 
-const SongCard = ({ songTitle, imgSrc, audioSrc }) => {
+const SongCard = ({ songTitle, coverImgSrc, coverImgAlt, audioSrc }) => {
   const isDesktop = useMediaQuery({
     query: "(min-width: 700px)",
   });
@@ -12,8 +12,8 @@ const SongCard = ({ songTitle, imgSrc, audioSrc }) => {
         <div className="card-container desktop">
           <img
             className="card-img desktop"
-            alt="cover for chris kulwik's 'Ypsi Bridge' song"
-            src={imgSrc}
+            alt={coverImgAlt}
+            src={coverImgSrc}
           />
           <div className="title-and-player">
             <div className="title-container desktop">
@@ -32,11 +32,7 @@ const SongCard = ({ songTitle, imgSrc, audioSrc }) => {
       ) : (
         <div className="card-container">
           <div className="image-and-title">
-            <img
-              className="card-img"
-              alt="cover for chris kulwik's 'Ypsi Bridge' song"
-              src={imgSrc}
-            />
+            <img className="card-img" alt={coverImgAlt} src={coverImgSrc} />
             <div className="title-container">
               <h3>{songTitle}</h3>
             </div>
@@ -52,3 +48,5 @@ const SongCard = ({ songTitle, imgSrc, audioSrc }) => {
 };
 
 export default SongCard;
+{
+}
