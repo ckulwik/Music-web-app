@@ -10,7 +10,7 @@ const Music = () => {
   return (
     <div className="page-container music-page-container">
       <SongCard
-        coverImgSrc="https://music-web-app-songs.s3.us-east-2.amazonaws.com/ypsibridgecover.svg"
+        coverImgSrc="https://music-web-app-songs.s3.us-east-2.amazonaws.com/ypsibridgecoverpng.png"
         coverImgAlt="cover for chris kulwik's 'Ypsi Bridge' song"
         songTitle="Ypsi Bridge"
         audioSrc="https://music-web-app-songs.s3.us-east-2.amazonaws.com/ypsiFinalMaybe3.wav"
