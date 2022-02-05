@@ -1,7 +1,7 @@
 const animateMainImage = () => {
     const root = document.querySelector("#root");
 
-    const ckulwikImg = document.querySelector(".img-container");
+    const ckulwikImg = document.querySelector(".main-img");
 
     const windowHeight = window.innerHeight;
     const windowWidth = window.outerWidth;

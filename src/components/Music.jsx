@@ -2,13 +2,15 @@ import "../styles/section.css";
 import SongCard from "./SongCard";
 
 const Music = () => {
-  // useEffect(() => {
-  //     const audioEl = document.getElementsByClassName("audio-player")[0];
-  //     audioEl.play();
-  // })
 
   return (
-    <div className="page-container music-page-container">
+    <div
+      className="page-container music-page-container"
+      data-aos="flip-right"
+      data-aos-duration="800"
+      data-aos-delay="100"
+      data-aos-once
+    >
       <SongCard
         coverImgSrc="https://music-web-app-songs.s3.us-east-2.amazonaws.com/ypsibridgecoverpng.png"
         coverImgAlt="cover for chris kulwik's 'Ypsi Bridge' song"
