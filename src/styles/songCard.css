@@ -1,78 +1,11 @@
 @import "./colors.css";
 
-.image-and-title {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-.audio-player {
-  max-width: 300px;
-  padding-top: 15px;
-}
-
 .card-container {
-  display: flex;
-  flex-direction: column;
+  width: 300px;
   margin-top: 50px;
-  align-items: center;
-  justify-content: space-between;
   padding: 10px;
-  width: 80%;
   border: 6px solid var(--red);
   border-radius: 4px;
   box-shadow: -6px 6px 0 0 var(--orange), -12px 12px 0 0 var(--yellow);
 }
 
-.card-img {
-  width: 25%;
-  max-width: 200px;
-  min-width: 160px;
-  border-radius: 4px;
-}
-
-.title-container {
-  max-width: 300px;
-  min-width: 100px;
-  padding: 15px;
-  color: var(--text);
-}
-
-.title-container.desktop {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  max-width: 60%;
-  padding: 0;
-  color: var(--text);
-}
-.title-and-player {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-}
-.card-container.desktop {
-  max-width: 650px;
-}
-
-.card-img.desktop {
-  max-width: 400px;
-  min-width: 250px;
-  border-right: 6px;
-}
-
-.audio-player.desktop {
-  padding-top: 0px;
-}
-
-.card-container.desktop {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-  border: 10px solid var(--red);
-  border-radius: 6px;
-  box-shadow: -10px 10px 0 0 var(--orange), -20px 20px 0 0 var(--yellow);
-}

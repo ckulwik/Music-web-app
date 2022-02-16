@@ -44,3 +44,25 @@
 .soundCloud:hover {
   transform: scale(1.15);
 }
+
+.ypsi-bridge-div {
+  font-size: 10px;
+  color: #cccccc;
+  line-break: anywhere;
+  word-break: normal;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-family: Interstate, Lucida Grande, Lucida Sans Unicode, Lucida Sans,
+    Garuda, Verdana, Tahoma, sans-serif;
+  font-weight: 100;
+}
+
+.ypsi-bridge-a {
+  color: #cccccc;
+  text-decoration: none;
+}
+
+.ypsi-bridge-container {
+  width: 300px;
+}
