@@ -25,7 +25,7 @@ const Music = () => {
             href="https://soundcloud.com/chris-kulwik"
             title="Chris Kulwik"
             target="_blank"
-            rel="nonreferrer"
+            rel="noreferrer"
             className="ypsi-bridge-a"
           >
             Chris Kulwik
@@ -35,7 +35,7 @@ const Music = () => {
             href="https://soundcloud.com/chris-kulwik/ypsi-bridge"
             title="Ypsi Bridge"
             target="_blank"
-            rel="nonreferrer"
+            rel="noreferrer"
             className="ypsi-bridge-a"
           >
             Ypsi Bridge
