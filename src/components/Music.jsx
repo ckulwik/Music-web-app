@@ -12,6 +12,7 @@ const Music = () => {
     >
       <SongCard>
         <iframe
+          title="ypsi-bridge-iframe"
           width="100%"
           height="300"
           scrolling="no"
@@ -24,6 +25,7 @@ const Music = () => {
             href="https://soundcloud.com/chris-kulwik"
             title="Chris Kulwik"
             target="_blank"
+            rel="nonreferrer"
             className="ypsi-bridge-a"
           >
             Chris Kulwik
@@ -33,6 +35,7 @@ const Music = () => {
             href="https://soundcloud.com/chris-kulwik/ypsi-bridge"
             title="Ypsi Bridge"
             target="_blank"
+            rel="nonreferrer"
             className="ypsi-bridge-a"
           >
             Ypsi Bridge
