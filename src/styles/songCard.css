@@ -7,5 +7,29 @@
   border: 6px solid var(--red);
   border-radius: 4px;
   box-shadow: -6px 6px 0 0 var(--orange), -12px 12px 0 0 var(--yellow);
+  animation-name: floating;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
 }
 
+.speed-1 {
+  animation-duration: 5.5s;
+}
+.speed-2 {
+  animation-duration: 4.3s;
+}
+.speed-3 {
+  animation-duration: 5.1s;
+}
+
+@keyframes floating {
+  0% {
+    transform: translate(0, 0px);
+  }
+  50% {
+    transform: translate(0, 10px);
+  }
+  100% {
+    transform: translate(0, -0px);
+  }
+}

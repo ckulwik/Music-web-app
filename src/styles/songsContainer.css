@@ -1,0 +1,9 @@
+.songs-container {
+  display: flex;
+  gap: 70px;
+  flex-flow: wrap;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 100px;
+  max-width: 880px;
+}

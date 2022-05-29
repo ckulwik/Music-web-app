@@ -21,12 +21,7 @@ const App = () => {
 
   return (
     <>
-      <header
-        data-aos="flip-right"
-        data-aos-duration="800"
-        data-aos-delay="100"
-        data-aos-once
-      >
+      <header>
         <HeaderItem title="Music" ref={MusicRef} order={1} />
         <HeaderItem title="About" ref={AboutRef} order={2} />
         <HeaderItem title="Links" ref={LinksRef} order={3} />
