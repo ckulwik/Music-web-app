@@ -1,0 +1,43 @@
+@import "./colors.css";
+
+.header {
+  width: calc(100% - 40);
+  border-width: 5px;
+  margin-top: -20px;
+  color: white;
+}
+
+.header-1 {
+  border-top: 40px solid var(--yellow);
+  margin-top: 40px;
+}
+
+.header-2 {
+  border-top: 40px solid var(--orange);
+}
+
+.header-3 {
+  border-top: 40px solid var(--red);
+}
+
+.menu-title {
+  margin-top: -32px;
+  margin-left: 15px;
+}
+
+/* desktop specific styles */
+@media only screen and (min-width: 700px) {
+  .menu-title {
+    margin-top: -32px;
+    margin-left: 70px;
+  }
+
+  .header {
+    transition: transform 0.5s;
+  }
+
+  .header:hover {
+    cursor: pointer;
+    transform: scale(1.015);
+  }
+}

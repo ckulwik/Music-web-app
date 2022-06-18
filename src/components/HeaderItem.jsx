@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/header.css";
+import "../styles/headerItem.css";
 
 const scrollTo = (ref) => {
   ref.current.scrollIntoView({ behavior: "smooth" });
