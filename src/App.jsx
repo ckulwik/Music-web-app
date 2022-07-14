@@ -5,7 +5,7 @@ import About from "./components/About";
 import Links from "./components/Links";
 import Header from "./components/Header";
 import Logo from "./components/Logo";
-import "../src/styles/app.css";
+import "./styles/app.css";
 
 import AOS from "aos";
 import "aos/dist/aos.css";
