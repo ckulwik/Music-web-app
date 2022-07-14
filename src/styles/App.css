@@ -1,3 +1,12 @@
+@font-face {
+  font-family: casual-cursive;
+  src: url(../FiraCodeiScript-Italic.ttf);
+}
+
+.app-container {
+  font-family: "casual-cursive";
+}
+
 .content-container {
   display: flex;
   flex-direction: column;
@@ -51,5 +60,16 @@ h4 {
 .main-img {
   width: 50%;
   max-width: 600px;
-  min-width: 250px;
+  min-width: 320px;
+}
+
+/* mobile styles */
+@media only screen and (max-width: 700px) {
+  .image-container {
+    margin-top: 200px;
+    margin-bottom: 30vh;
+  }
+  .main-img {
+    width: 50%;
+  }
 }

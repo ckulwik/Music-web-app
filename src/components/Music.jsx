@@ -18,20 +18,20 @@ const Music = () => {
             width="100%"
             height="300"
             scrolling="no"
-            frameborder="no"
+            frameBorder="no"
             allow="autoplay"
             src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1172045620&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
           ></iframe>
         </SongCard>
       </SongsContainer>
-      <SongsContainer title="Mashups etc">
+      <SongsContainer title="Mashups etc.">
         <SongCard hoverSpeed={2}>
           <iframe
             title="big-black-boots-iframe"
             width="100%"
             height="300"
             scrolling="no"
-            frameborder="no"
+            frameBorder="no"
             allow="autoplay"
             src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1277106907&color=%231f2020&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
           ></iframe>
@@ -42,7 +42,7 @@ const Music = () => {
             width="100%"
             height="300"
             scrolling="no"
-            frameborder="no"
+            frameBorder="no"
             allow="autoplay"
             src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1123652962&color=%231f2020&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
           ></iframe>
