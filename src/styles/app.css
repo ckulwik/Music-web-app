@@ -1,0 +1,75 @@
+@font-face {
+  font-family: casual-cursive;
+  src: url(../FiraCodeiScript-Italic.ttf);
+}
+
+.app-container {
+  font-family: "casual-cursive";
+}
+
+.content-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.menu-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.menu-item {
+  text-decoration: none;
+  padding: 30px;
+  cursor: pointer;
+}
+
+h1 {
+  font-weight: 400;
+  margin: 0;
+  color: white;
+}
+
+h2,
+h4 {
+  font-weight: 400;
+}
+
+.page {
+  min-height: 500px;
+  width: 100%;
+}
+
+.page.links {
+  min-height: 150px;
+  margin-bottom: 100px;
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  max-height: 400px;
+  min-height: 30vh;
+  width: 100%;
+}
+
+.main-img {
+  width: 50%;
+  max-width: 600px;
+  min-width: 320px;
+}
+
+/* mobile styles */
+@media only screen and (max-width: 700px) {
+  .image-container {
+    margin-top: 200px;
+    margin-bottom: 30vh;
+  }
+  .main-img {
+    width: 50%;
+  }
+}
