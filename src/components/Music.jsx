@@ -12,7 +12,18 @@ const Music = () => {
       // data-aos-once
     >
       <SongsContainer title="Originals">
-        <SongCard hoverSpeed={1}>
+      <SongCard hoverSpeed={1}>
+          <iframe
+            title="all-at-once-iframe"
+            width="100%"
+            height="300"
+            scrolling="no"
+            frameBorder="no"
+            allow="autoplay"
+            src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1355607472&color=%231f2020&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
+          ></iframe>
+        </SongCard>
+        <SongCard hoverSpeed={2}>
           <iframe
             title="ypsi-bridge-iframe"
             width="100%"
@@ -25,7 +36,7 @@ const Music = () => {
         </SongCard>
       </SongsContainer>
       <SongsContainer title="Mashups etc.">
-        <SongCard hoverSpeed={2}>
+        <SongCard hoverSpeed={3}>
           <iframe
             title="big-black-boots-iframe"
             width="100%"
@@ -36,7 +47,7 @@ const Music = () => {
             src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1277106907&color=%231f2020&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
           ></iframe>
         </SongCard>
-        <SongCard hoverSpeed={3}>
+        <SongCard hoverSpeed={4}>
           <iframe
             title="butterflies-and-circles-iframe"
             width="100%"

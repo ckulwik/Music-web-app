@@ -22,6 +22,9 @@
 .speed-3 {
   animation-duration: 5.1s;
 }
+.speed-4 {
+  animation-duration: 4.7s;
+}
 
 @keyframes floating {
   0% {
