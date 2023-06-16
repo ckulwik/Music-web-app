@@ -1,0 +1,135 @@
+@import "./colors.css";
+
+.footer-container {
+  position: relative;
+  transform: rotate(180deg);
+  height: 70px;
+}
+
+.footer-circle {
+  z-index: 1;
+  position: absolute;
+  right: 0;
+  top: 120px;
+  right: 80px;
+  border: 40px solid var(--yellow);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border-top-left-radius: 0;
+}
+
+.footer-circle:before {
+  content: " ";
+  position: absolute;
+  border: 40px solid var(--orange);
+  border-radius: 50%;
+  border-top-left-radius: 0;
+  left: -80px;
+  top: -80px;
+  width: 120px;
+  height: 120px;
+}
+
+.footer-circle:after {
+  content: " ";
+  position: absolute;
+  border: 40px solid var(--red);
+  border-radius: 50%;
+  border-top-left-radius: 0;
+  left: -120px;
+  top: -120px;
+  width: 200px;
+  height: 200px;
+}
+
+.footer-circle-crop {
+  position: absolute;
+  right: 0;
+  top: 40px;
+  right: 140px;
+  background: var(--red);
+  height: 120px;
+  width: 140px;
+}
+
+.footer-circle-crop:before {
+  content: "";
+  z-index: 1;
+  position: absolute;
+  border-bottom: 40px solid var(--orange);
+  width: 140px;
+  height: 40px;
+}
+
+.footer-circle-crop:after {
+  content: "";
+  z-index: 1;
+  position: absolute;
+  border-bottom: 40px solid var(--yellow);
+  width: 140px;
+  height: 80px;
+}
+
+.footer-hide-headers {
+  z-index: 0;
+  background: var(--yellow-base);
+  position: absolute;
+  top: 40px;
+  right: 0;
+  width: 140px;
+  height: 120px;
+}
+
+.footer-top-lines {
+  position: absolute;
+  right: 0;
+  top: 0px;
+  right: 240px;
+  width: 40px;
+  height: 40px;
+  background: var(--red);
+}
+
+.footer-top-lines:before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 40px;
+  width: 40px;
+  height: 40px;
+  background: var(--orange);
+}
+
+.footer-top-lines:after {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 80px;
+  width: 40px;
+  height: 40px;
+  background: var(--yellow);
+}
+
+.yellow-line{
+  width: calc(100vw - 280px);
+  height: 40px;
+  background: var(--yellow);
+  position: absolute;
+  top: 120px;
+}
+
+.orange-line{
+  width: calc(100vw - 280px);
+  height: 40px;
+  background: var(--orange);
+  position: absolute;
+  top: 80px;
+}
+.red-line{
+  width: calc(100vw - 280px);
+  height: 40px;
+  background: var(--red);
+  position: absolute;
+  top: 40px;
+}

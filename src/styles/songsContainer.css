@@ -5,5 +5,12 @@
   align-items: center;
   justify-content: center;
   margin-bottom: 100px;
-  max-width: 880px;
+  max-width: 60vw;
+}
+
+/* mobile styles */
+@media only screen and (max-width: 700px) {
+  .songs-container {
+   max-width: 90vw;
+  }
 }

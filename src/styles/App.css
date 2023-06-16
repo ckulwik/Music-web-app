@@ -61,6 +61,11 @@ h4 {
   width: 50%;
   max-width: 600px;
   min-width: 320px;
+  transition: transform 0.5s;
+}
+
+.main-img:hover{
+  transform: scale(1.05); 
 }
 
 /* mobile styles */
