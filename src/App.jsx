@@ -5,6 +5,7 @@ import About from "./components/About";
 import Links from "./components/Links";
 import Header from "./components/Header";
 import Logo from "./components/Logo";
+import Footer from './components/Footer'
 
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -39,6 +40,7 @@ const App = () => {
       <div className="page links" ref={LinksRef}>
         <Links />
       </div>
+      <Footer />
     </div>
   );
 };

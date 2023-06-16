@@ -4,9 +4,6 @@ import "../styles/songsContainer.css";
 import Separator from "./Separator";
 
 const SongsContainer = ({ title, children }) => {
-  // const isDesktop = useMediaQuery({
-  //   query: "(min-width: 700px)",
-  // });
   return (
     <>
       <Separator title={title} />

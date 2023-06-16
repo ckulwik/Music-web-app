@@ -12,7 +12,40 @@ const Music = () => {
       // data-aos-once
     >
       <SongsContainer title="Originals">
-      <SongCard hoverSpeed={1}>
+        <SongCard hoverSpeed={5}>
+          <iframe
+            title="pokemon-pinball-iframe"
+            width="100%"
+            height="300"
+            scrolling="no"
+            frameBorder="no"
+            allow="autoplay"
+            src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1518799396&color=%232f2d2e&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
+          ></iframe>
+        </SongCard>
+        <SongCard hoverSpeed={6}>
+          <iframe
+            title="4-strings-iframe"
+            width="100%"
+            height="300"
+            scrolling="no"
+            frameBorder="no"
+            allow="autoplay"
+            src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1393800082&color=%232f2d2e&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
+          ></iframe>
+        </SongCard>
+        <SongCard hoverSpeed={7}>
+          <iframe
+            title="gobble-wobble-iframe"
+            width="100%"
+            height="300"
+            scrolling="no"
+            frameBorder="no"
+            allow="autoplay"
+            src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1390104205&color=%232f2d2e&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
+          ></iframe>
+        </SongCard>
+        <SongCard hoverSpeed={1}>
           <iframe
             title="all-at-once-iframe"
             width="100%"
