@@ -13,7 +13,7 @@
   },
   "devDependencies": {
     "sass-loader": "^10",
-    "webpack": "4.44.2",
+    "webpack": "5.92.1",
     "webpack-cli": "^4.8.0"
   },
   "scripts": {
