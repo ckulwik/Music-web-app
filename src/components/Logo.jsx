@@ -1,7 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
+import animateMainImage from "../scripts/animation.js";
 import "../styles/app.css";
 
-const Logo = () => {
+const Logo = ({ isDesktop }) => {
+
+  useEffect(() => {
+    isDesktop && animateMainImage();
+  }, [isDesktop]);
+
   return (
     <>
       <div
