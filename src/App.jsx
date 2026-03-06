@@ -2,7 +2,7 @@ import { useRef, useEffect, lazy, Suspense } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useMediaQuery } from "react-responsive";
-import CircularProgress from "@mui/material/CircularProgress"; 
+import CircularProgress from "@mui/material/CircularProgress";
 import React from "react";
 
 const Music = lazy(() => import("./components/Music"));
