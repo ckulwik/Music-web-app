@@ -11,25 +11,42 @@ const server = new ApolloServer({
   resolvers,
 });
 
-// Default to API Gateway HTTP API (v2). If you use REST API (v1), swap to handlers.createAPIGatewayProxyEventRequestHandler().
-exports.handler = startServerAndCreateLambdaHandler(
+const lambdaOptions = {
+  middleware: [
+    async (request) => {
+      const requiredKey = process.env.GRAPHQL_API_KEY;
+      if (!requiredKey) return;
+
+      const event = request && request.event ? request.event : undefined;
+      const headers = (event && event.headers) || {};
+      const providedKey = headers['x-api-key'] || headers['X-Api-Key'] || headers['X-API-KEY'];
+
+      if (providedKey !== requiredKey) {
+        const err = new Error('Unauthorized');
+        err.statusCode = 401;
+        throw err;
+      }
+    },
+  ],
+};
+
+const handlerV1 = startServerAndCreateLambdaHandler(
+  server,
+  handlers.createAPIGatewayProxyEventRequestHandler(),
+  lambdaOptions
+);
+
+const handlerV2 = startServerAndCreateLambdaHandler(
   server,
   handlers.createAPIGatewayProxyEventV2RequestHandler(),
-  {
-    middleware: [
-      async ({ event }) => {
-        const requiredKey = process.env.GRAPHQL_API_KEY;
-        if (!requiredKey) return;
-
-        const headers = event.headers || {};
-        const providedKey = headers['x-api-key'] || headers['X-Api-Key'] || headers['X-API-KEY'];
-
-        if (providedKey !== requiredKey) {
-          const err = new Error('Unauthorized');
-          err.statusCode = 401;
-          throw err;
-        }
-      },
-    ],
-  }
+  lambdaOptions
 );
+
+exports.handler = async (event, context, callback) => {
+  // API Gateway HTTP API sets event.version = '2.0'. REST API (and other proxy integrations) won't.
+  if (event && event.version === '2.0') {
+    return handlerV2(event, context, callback);
+  }
+
+  return handlerV1(event, context, callback);
+};
