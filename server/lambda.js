@@ -11,38 +11,33 @@ const server = new ApolloServer({
   resolvers,
 });
 
-const lambdaOptions = {
-  middleware: [
-    async (request) => {
-      const requiredKey = process.env.GRAPHQL_API_KEY;
-      if (!requiredKey) return;
-
-      const event = request && request.event ? request.event : undefined;
-      const headers = (event && event.headers) || {};
-      const providedKey = headers['x-api-key'] || headers['X-Api-Key'] || headers['X-API-KEY'];
-
-      if (providedKey !== requiredKey) {
-        const err = new Error('Unauthorized');
-        err.statusCode = 401;
-        throw err;
-      }
-    },
-  ],
-};
-
 const handlerV1 = startServerAndCreateLambdaHandler(
   server,
   handlers.createAPIGatewayProxyEventRequestHandler(),
-  lambdaOptions
+  {}
 );
 
 const handlerV2 = startServerAndCreateLambdaHandler(
   server,
   handlers.createAPIGatewayProxyEventV2RequestHandler(),
-  lambdaOptions
+  {}
 );
 
 exports.handler = async (event, context, callback) => {
+  // Simple API key check outside of Apollo middleware to avoid shape issues
+  const requiredKey = process.env.GRAPHQL_API_KEY;
+  if (requiredKey) {
+    const headers = event.headers || {};
+    const providedKey = headers['x-api-key'] || headers['X-Api-Key'] || headers['X-API-KEY'];
+    if (providedKey !== requiredKey) {
+      return {
+        statusCode: 401,
+        body: JSON.stringify({ error: 'Unauthorized' }),
+        headers: { 'Content-Type': 'application/json' },
+      };
+    }
+  }
+
   // API Gateway HTTP API sets event.version = '2.0'. REST API (and other proxy integrations) won't.
   if (event && event.version === '2.0') {
     return handlerV2(event, context, callback);
