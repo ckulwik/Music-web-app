@@ -14,13 +14,25 @@ const server = new ApolloServer({
 const handlerV1 = startServerAndCreateLambdaHandler(
   server,
   handlers.createAPIGatewayProxyEventRequestHandler(),
-  {}
+  {
+    middleware: [() => ({ req, res }) => {
+      res.setHeader('Access-Control-Allow-Origin', 'https://www.chriskulwikmusic.com');
+      res.setHeader('Access-Control-Allow-Headers', 'Content-Type, x-api-key');
+      res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
+    }]
+  }
 );
 
 const handlerV2 = startServerAndCreateLambdaHandler(
   server,
   handlers.createAPIGatewayProxyEventV2RequestHandler(),
-  {}
+  {
+    middleware: [() => ({ req, res }) => {
+      res.setHeader('Access-Control-Allow-Origin', 'https://www.chriskulwikmusic.com');
+      res.setHeader('Access-Control-Allow-Headers', 'Content-Type, x-api-key');
+      res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
+    }]
+  }
 );
 
 exports.handler = async (event, context, callback) => {
@@ -33,7 +45,12 @@ exports.handler = async (event, context, callback) => {
       return {
         statusCode: 401,
         body: JSON.stringify({ error: 'Unauthorized' }),
-        headers: { 'Content-Type': 'application/json' },
+        headers: {
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': 'https://www.chriskulwikmusic.com',
+          'Access-Control-Allow-Headers': 'Content-Type, x-api-key',
+          'Access-Control-Allow-Methods': 'POST, OPTIONS'
+        },
       };
     }
   }
