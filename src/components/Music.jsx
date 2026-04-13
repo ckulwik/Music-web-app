@@ -1,6 +1,6 @@
 import "../styles/section.css";
 import SongsContainer from "./SongsContainer";
-import React, { lazy, Suspense } from "react";
+import React, { lazy, Suspense, useState, useEffect } from "react";
 import CircularProgress from "@mui/material/CircularProgress";
 import { useSongs } from '../hooks/useSongs';
 
@@ -24,8 +24,22 @@ function GradientCircularProgress() {
 }
 
 const Music = () => {
-  const { songs: originalsSongs } = useSongs('Originals');
-  const { songs: mashupsSongs } = useSongs('Mashups etc.');
+  const { songs: originalsSongs, loading: originalsLoading, error: originalsError } = useSongs('Originals');
+  const { songs: mashupsSongs, loading: mashupsLoading, error: mashupsError } = useSongs('Mashups etc.');
+
+  const [timedOut, setTimedOut] = useState(false);
+  const [showRetry, setShowRetry] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (originalsLoading || mashupsLoading) {
+        setTimedOut(true);
+        setShowRetry(true);
+      }
+    }, 10000);
+
+    return () => clearTimeout(timer);
+  }, [originalsLoading, mashupsLoading]);
 
   const renderSongCard = (song) => (
     <Suspense key={song.id} fallback={<GradientCircularProgress />}>
@@ -43,6 +57,23 @@ const Music = () => {
     </Suspense>
   );
 
+  if (originalsError || mashupsError) {
+    return (
+      <div className="page-container music-page-container">
+        <SongsContainer title="Originals">
+          <p style={{ color: '#a90b1b', textAlign: 'center', marginTop: '2rem' }}>
+            Songs could not be retrieved. Refresh the page to try again.
+          </p>
+        </SongsContainer>
+        <SongsContainer title="Mashups etc.">
+          <p style={{ color: '#a90b1b', textAlign: 'center', marginTop: '2rem' }}>
+            Songs could not be retrieved. Refresh the page to try again.
+          </p>
+        </SongsContainer>
+      </div>
+    );
+  }
+
   return (
     <div
       className="page-container music-page-container"
@@ -52,11 +83,33 @@ const Music = () => {
     // data-aos-once
     >
       <SongsContainer title="Originals">
-        {originalsSongs.map(renderSongCard)}
+        {(originalsLoading || mashupsLoading) && !timedOut && (
+          <div style={{ textAlign: 'center', marginTop: '2rem' }}>
+            <CircularProgress sx={{ color: '#a90b1b' }} size={40} />
+            <p style={{ color: '#a90b1b', marginTop: '1rem' }}>Retrieving songs...</p>
+          </div>
+        )}
+        {timedOut && showRetry && (
+          <p style={{ color: '#a90b1b', textAlign: 'center', marginTop: '2rem' }}>
+            Songs could not be retrieved. Refresh the page to try again.
+          </p>
+        )}
+        {!originalsLoading && !timedOut && originalsSongs.map(renderSongCard)}
       </SongsContainer>
 
       <SongsContainer title="Mashups etc.">
-        {mashupsSongs.map(renderSongCard)}
+        {(mashupsLoading || originalsLoading) && !timedOut && (
+          <div style={{ textAlign: 'center', marginTop: '2rem' }}>
+            <CircularProgress sx={{ color: '#a90b1b' }} size={40} />
+            <p style={{ color: '#a90b1b', marginTop: '1rem' }}>Retrieving songs...</p>
+          </div>
+        )}
+        {timedOut && showRetry && (
+          <p style={{ color: '#a90b1b', textAlign: 'center', marginTop: '2rem' }}>
+            Songs could not be retrieved. Refresh the page to try again.
+          </p>
+        )}
+        {!mashupsLoading && !timedOut && mashupsSongs.map(renderSongCard)}
       </SongsContainer>
     </div>
   );
