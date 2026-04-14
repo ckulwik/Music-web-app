@@ -4,9 +4,7 @@ name: Deploy master (CD)
 
 # Controls when the action will run. 
 on:
-  # Triggers the workflow on push or pull request events but only for the master branch
-  push:
-    branches: [ master ]
+  # Triggers the workflow when a pull request is merged to master
   pull_request:
     types: [closed]
     branches: [ master ]
@@ -18,7 +16,7 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    if: github.event.pull_request.merged == true || github.event_name == 'push'
+    if: github.event.pull_request.merged == true
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
