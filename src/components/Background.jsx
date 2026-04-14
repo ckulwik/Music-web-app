@@ -1,41 +1,19 @@
-import "../styles/background.css";
-import {useEffect} from "react"
-
 const Background = () => {
-
-    // --scroll is supposed to be percent of page scrolled
-
     window.addEventListener('scroll', () => {
-        // document.body.style.setProperty('--scroll',window.pageYOffset / (document.body.offsetHeight - window.innerHeight));
-        document.body.style.setProperty('--scroll', (document.documentElement.scrollTop) );
-      }, false);
-
-    useEffect(() => {
-        const handler = () => {
-          // Check and update component here.
-        //   console.log(document.documentElement.scrollTop)
-        console.log((document.documentElement.scrollTop))
-
-        // document.body.offsetHeight is always 610
-
-        };
-    
-        window.addEventListener("scroll", handler);
-        return () => window.removeEventListener("scroll", handler);
-      }, []
-    );
+        document.body.style.setProperty('--scroll', (document.documentElement.scrollTop));
+    }, false);
 
     return (
-        
+
         <div className="container-to-center">
             <div className="img-container">
-            
+
                 <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
                     width="300.000000pt" height="240.000000pt" viewBox="0 0 300.000000 240.000000"
                     preserveAspectRatio="xMidYMid meet">
-                
+
                     <g transform="translate(0.000000,240.000000) scale(0.100000,-0.100000)"
-                    fill="#000000" stroke="none">
+                        fill="#000000" stroke="none">
                         <path d="M1240 1609 c-282 -29 -680 -112 -680 -143 0 -7 7 -35 15 -62 8 -27
                     15 -54 15 -59 0 -7 -40 -11 -107 -11 -60 0 -133 -6 -163 -13 -61 -15 -160 -64
                     -185 -91 -16 -17 -15 -18 23 -13 22 3 64 0 94 -7 61 -15 213 -89 183 -90 -38
@@ -72,8 +50,8 @@ const Background = () => {
                 </svg>
             </div>
         </div>
-        
-        
+
+
     )
 }
 
