@@ -23,6 +23,7 @@ import {
 import { styled } from '@mui/material/styles';
 import { useSongs } from '../hooks/useSongs';
 import EnhancedSongCard from './EnhancedSongCard';
+import { Input } from './ui/input';
 
 const StyledContainer = styled(Container)(({ theme }) => ({
   minHeight: '100vh',
@@ -230,21 +231,58 @@ const EnhancedMusic = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.1 }}
       >
-        <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-          <SearchBar
-            placeholder="Search songs by title..."
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-            sx={{ maxWidth: '500px', width: '100%' }}
-            aria-label="Search songs by title"
-            InputProps={{
-              startAdornment: (
-                <InputAdornment position="start">
-                  <Search />
-                </InputAdornment>
-              ),
+        <Box sx={{ display: 'flex', justifyContent: 'center', mb: 4 }}>
+          <Box
+            sx={{
+              position: 'relative',
+              maxWidth: '500px',
+              width: '100%',
             }}
-          />
+          >
+            <Search
+              sx={{
+                position: 'absolute',
+                left: 12,
+                top: '50%',
+                transform: 'translateY(-50%)',
+                color: 'text.secondary',
+                pointerEvents: 'none',
+              }}
+            />
+            <Input
+              type="text"
+              placeholder="Search songs by title..."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              aria-label="Search songs by title"
+              style={{
+                width: '100%',
+                paddingLeft: '40px',
+                borderRadius: '16px',
+                background: theme.palette.background.paper,
+                boxShadow: theme.shadows[2],
+                border: `1px solid ${theme.palette.divider}`,
+                padding: '0.5rem 1rem 0.5rem 2.5rem',
+                fontSize: '1rem',
+                transition: 'all 0.3s ease',
+                outline: 'none',
+              }}
+              onMouseEnter={(e) => {
+                e.target.style.boxShadow = theme.shadows[4];
+              }}
+              onMouseLeave={(e) => {
+                e.target.style.boxShadow = theme.shadows[2];
+              }}
+              onFocus={(e) => {
+                e.target.style.boxShadow = theme.shadows[8];
+                e.target.style.borderColor = theme.palette.primary.main;
+              }}
+              onBlur={(e) => {
+                e.target.style.boxShadow = theme.shadows[2];
+                e.target.style.borderColor = theme.palette.divider;
+              }}
+            />
+          </Box>
         </Box>
       </motion.div>
 

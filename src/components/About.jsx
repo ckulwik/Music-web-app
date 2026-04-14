@@ -1,6 +1,7 @@
-import { Typography, Box, Chip, Divider } from "@mui/material";
+import { Typography, Box, Divider } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import { motion } from "framer-motion";
+import { Badge } from "./ui/badge";
 
 const About = () => {
   const theme = useTheme();
@@ -149,10 +150,10 @@ const About = () => {
           }}
         >
           {skills.map((skill, index) => (
-            <Chip
+            <Badge
               key={index}
-              label={skill}
-              sx={{
+              variant="primary"
+              style={{
                 backgroundColor: theme.palette.mode === 'dark'
                   ? 'rgba(255, 107, 107, 0.15)'
                   : 'rgba(169, 11, 27, 0.1)',
@@ -160,15 +161,25 @@ const About = () => {
                 border: `1px solid ${theme.palette.primary.main}`,
                 fontWeight: 500,
                 fontSize: '0.9rem',
-                '&:hover': {
-                  backgroundColor: theme.palette.mode === 'dark'
-                    ? 'rgba(255, 107, 107, 0.3)'
-                    : 'rgba(169, 11, 27, 0.2)',
-                  transform: 'scale(1.05)',
-                  transition: 'all 0.2s ease'
-                }
+                padding: '0.5rem 1rem',
+                cursor: 'default',
               }}
-            />
+              onMouseEnter={(e) => {
+                e.target.style.backgroundColor = theme.palette.mode === 'dark'
+                  ? 'rgba(255, 107, 107, 0.3)'
+                  : 'rgba(169, 11, 27, 0.2)';
+                e.target.style.transform = 'scale(1.05)';
+                e.target.style.transition = 'all 0.2s ease';
+              }}
+              onMouseLeave={(e) => {
+                e.target.style.backgroundColor = theme.palette.mode === 'dark'
+                  ? 'rgba(255, 107, 107, 0.15)'
+                  : 'rgba(169, 11, 27, 0.1)';
+                e.target.style.transform = 'scale(1)';
+              }}
+            >
+              {skill}
+            </Badge>
           ))}
         </Box>
 
@@ -202,9 +213,9 @@ const About = () => {
             mb: 4
           }}
         >
-          <Chip
-            label="AWS Certified Developer - Associate (October 2025)"
-            sx={{
+          <Badge
+            variant="accent"
+            style={{
               backgroundColor: theme.palette.mode === 'dark'
                 ? 'rgba(246, 139, 9, 0.15)'
                 : 'rgba(246, 139, 9, 0.1)',
@@ -212,19 +223,17 @@ const About = () => {
               border: `1px solid ${theme.palette.secondary.main}`,
               fontWeight: 600,
               fontSize: '1rem',
-              px: 2,
-              py: 1,
+              padding: '0.75rem 1.5rem',
               whiteSpace: 'normal',
-              height: 'auto',
-              '& .MuiChip-label': {
-                whiteSpace: 'normal',
-                textAlign: 'center'
-              }
+              textAlign: 'center',
+              cursor: 'default',
             }}
-          />
-          <Chip
-            label="AWS Certified Cloud Practitioner (February 2020)"
-            sx={{
+          >
+            AWS Certified Developer - Associate (October 2025)
+          </Badge>
+          <Badge
+            variant="accent"
+            style={{
               backgroundColor: theme.palette.mode === 'dark'
                 ? 'rgba(246, 139, 9, 0.15)'
                 : 'rgba(246, 139, 9, 0.1)',
@@ -232,16 +241,14 @@ const About = () => {
               border: `1px solid ${theme.palette.secondary.main}`,
               fontWeight: 600,
               fontSize: '1rem',
-              px: 2,
-              py: 1,
+              padding: '0.75rem 1.5rem',
               whiteSpace: 'normal',
-              height: 'auto',
-              '& .MuiChip-label': {
-                whiteSpace: 'normal',
-                textAlign: 'center'
-              }
+              textAlign: 'center',
+              cursor: 'default',
             }}
-          />
+          >
+            AWS Certified Cloud Practitioner (February 2020)
+          </Badge>
         </Box>
 
         <Typography
