@@ -14,7 +14,14 @@ const server = new ApolloServer({
 // Create a single handler that can handle both API Gateway versions
 const handler = startServerAndCreateLambdaHandler(
   server,
-  handlers.createAPIGatewayProxyEventV2RequestHandler()
+  handlers.createAPIGatewayProxyEventV2RequestHandler(),
+  {
+    middleware: [() => ({ req, res }) => {
+      res.setHeader('Access-Control-Allow-Origin', 'https://www.chriskulwikmusic.com');
+      res.setHeader('Access-Control-Allow-Headers', 'Content-Type, x-api-key');
+      res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
+    }]
+  }
 );
 
 exports.handler = async (event, context, callback) => {
