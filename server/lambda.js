@@ -53,20 +53,21 @@ exports.handler = async (event, context, callback) => {
     }
   }
 
-  // Handle the GraphQL request and add CORS headers
+  // Handle the GraphQL request
   const response = await handler(event, context);
 
+  // Ensure CORS headers are present on all responses
+  const corsHeaders = {
+    'Access-Control-Allow-Origin': 'https://www.chriskulwikmusic.com',
+    'Access-Control-Allow-Headers': 'Content-Type, x-api-key',
+    'Access-Control-Allow-Methods': 'POST, OPTIONS'
+  };
+
   // Add CORS headers to the response
-  if (response && response.headers) {
-    response.headers['Access-Control-Allow-Origin'] = 'https://www.chriskulwikmusic.com';
-    response.headers['Access-Control-Allow-Headers'] = 'Content-Type, x-api-key';
-    response.headers['Access-Control-Allow-Methods'] = 'POST, OPTIONS';
-  } else if (response) {
-    response.headers = {
-      'Access-Control-Allow-Origin': 'https://www.chriskulwikmusic.com',
-      'Access-Control-Allow-Headers': 'Content-Type, x-api-key',
-      'Access-Control-Allow-Methods': 'POST, OPTIONS'
-    };
+  if (response.headers) {
+    Object.assign(response.headers, corsHeaders);
+  } else {
+    response.headers = corsHeaders;
   }
 
   return response;
