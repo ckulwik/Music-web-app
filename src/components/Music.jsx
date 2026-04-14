@@ -1,4 +1,3 @@
-import "../styles/section.css";
 import SongsContainer from "./SongsContainer";
 import React, { lazy, Suspense, useState, useEffect } from "react";
 import CircularProgress from "@mui/material/CircularProgress";
@@ -77,10 +76,6 @@ const Music = () => {
   return (
     <div
       className="page-container music-page-container"
-    // data-aos="flip-right"
-    // data-aos-duration="800"
-    // data-aos-delay="100"
-    // data-aos-once
     >
       <SongsContainer title="Originals">
         {(originalsLoading || mashupsLoading) && !timedOut && (

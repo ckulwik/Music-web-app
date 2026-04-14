@@ -11,19 +11,8 @@ const server = new ApolloServer({
   resolvers,
 });
 
-const handlerV1 = startServerAndCreateLambdaHandler(
-  server,
-  handlers.createAPIGatewayProxyEventRequestHandler(),
-  {
-    middleware: [() => ({ req, res }) => {
-      res.setHeader('Access-Control-Allow-Origin', 'https://www.chriskulwikmusic.com');
-      res.setHeader('Access-Control-Allow-Headers', 'Content-Type, x-api-key');
-      res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
-    }]
-  }
-);
-
-const handlerV2 = startServerAndCreateLambdaHandler(
+// Create a single handler that can handle both API Gateway versions
+const handler = startServerAndCreateLambdaHandler(
   server,
   handlers.createAPIGatewayProxyEventV2RequestHandler(),
   {
@@ -36,6 +25,22 @@ const handlerV2 = startServerAndCreateLambdaHandler(
 );
 
 exports.handler = async (event, context, callback) => {
+  console.log('Lambda deployment test - revamp branch');
+
+  // Handle CORS preflight requests
+  if (event.httpMethod === 'OPTIONS') {
+    return {
+      statusCode: 200,
+      headers: {
+        'Access-Control-Allow-Origin': 'https://www.chriskulwikmusic.com',
+        'Access-Control-Allow-Headers': 'Content-Type, x-api-key',
+        'Access-Control-Allow-Methods': 'POST, OPTIONS',
+        'Content-Type': 'application/json'
+      },
+      body: ''
+    };
+  }
+
   // Simple API key check outside of Apollo middleware to avoid shape issues
   const requiredKey = process.env.GRAPHQL_API_KEY;
   if (requiredKey) {
@@ -55,10 +60,21 @@ exports.handler = async (event, context, callback) => {
     }
   }
 
-  // API Gateway HTTP API sets event.version = '2.0'. REST API (and other proxy integrations) won't.
-  if (event && event.version === '2.0') {
-    return handlerV2(event, context, callback);
+  // Handle the GraphQL request and add CORS headers
+  const response = await handler(event, context);
+
+  // Add CORS headers to the response
+  if (response && response.headers) {
+    response.headers['Access-Control-Allow-Origin'] = 'https://www.chriskulwikmusic.com';
+    response.headers['Access-Control-Allow-Headers'] = 'Content-Type, x-api-key';
+    response.headers['Access-Control-Allow-Methods'] = 'POST, OPTIONS';
+  } else if (response) {
+    response.headers = {
+      'Access-Control-Allow-Origin': 'https://www.chriskulwikmusic.com',
+      'Access-Control-Allow-Headers': 'Content-Type, x-api-key',
+      'Access-Control-Allow-Methods': 'POST, OPTIONS'
+    };
   }
 
-  return handlerV1(event, context, callback);
+  return response;
 };
