@@ -25,6 +25,8 @@ const handler = startServerAndCreateLambdaHandler(
 );
 
 exports.handler = async (event, context, callback) => {
+  console.log('Lambda deployment test - revamp branch');
+
   // Handle CORS preflight requests
   if (event.httpMethod === 'OPTIONS') {
     return {
