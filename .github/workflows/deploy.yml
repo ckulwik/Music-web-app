@@ -24,6 +24,11 @@ jobs:
         with:
           ref: master
 
+      - name: Use Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
       - name: Install
         run: npm install
       
@@ -52,4 +57,11 @@ jobs:
           aws lambda update-function-code \
             --function-name music-graphql \
             --zip-file fileb://server.zip \
+            --region us-east-1
+
+      - name: Update Lambda runtime (Node.js 22)
+        run: |
+          aws lambda update-function-configuration \
+            --function-name music-graphql \
+            --runtime nodejs22.x \
             --region us-east-1
