@@ -2,8 +2,6 @@ import React, { useState, useEffect, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   Box,
-  TextField,
-  InputAdornment,
   Typography,
   Grid,
   Container,
@@ -29,22 +27,6 @@ const StyledContainer = styled(Container)(({ theme }) => ({
   minHeight: '100vh',
   py: 4,
   position: 'relative',
-}));
-
-const SearchBar = styled(TextField)(({ theme }) => ({
-  marginBottom: theme.spacing(4),
-  '& .MuiOutlinedInput-root': {
-    borderRadius: 16,
-    background: theme.palette.background.paper,
-    boxShadow: theme.shadows[2],
-    transition: 'all 0.3s ease',
-    '&:hover': {
-      boxShadow: theme.shadows[4],
-    },
-    '&.Mui-focused': {
-      boxShadow: theme.shadows[8],
-    },
-  },
 }));
 
 const TabPanel = ({ children, value, index, ...other }) => (

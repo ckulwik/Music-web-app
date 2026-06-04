@@ -71,7 +71,7 @@ const App = () => {
 
   return (
     <CustomThemeProvider>
-      <Box className="app-container" sx={{ minHeight: '100vh' }}>
+      <Box className="app-container min-h-screen bg-slate-950 text-slate-100" sx={{ minHeight: '100vh' }}>
         <Suspense fallback={<LoadingScreen />}>
           <ModernHeader MusicRef={MusicRef} AboutRef={AboutRef} LinksRef={LinksRef} />
 
