@@ -65,7 +65,6 @@ const About = () => {
         >
           About Me
         </Typography>
-
         <Typography
           variant="body1"
           component={motion.p}
